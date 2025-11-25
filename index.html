@@ -12,106 +12,204 @@
         }
         
         body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #2d3748;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             padding: 20px;
         }
         
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 900px;
+            margin: 40px auto;
             background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
         }
         
         .header {
             text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 20px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .header h1 {
-            color: #007bff;
-            font-size: 2.5em;
+            font-size: 3em;
+            font-weight: 700;
             margin-bottom: 10px;
+            letter-spacing: -1px;
         }
         
         .header .subtitle {
-            color: #666;
-            font-size: 1.1em;
+            font-size: 1.3em;
+            color: #718096;
+            font-weight: 300;
+        }
+        
+        .last-update {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #fdcb6e;
+            margin: 30px 0;
+            text-align: center;
+            font-weight: 600;
+            color: #856404;
         }
         
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.2s ease;
+        }
+        
+        .section:hover {
+            transform: translateX(5px);
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
         }
         
         .section h2 {
-            color: #007bff;
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid #eee;
+            color: #2d3748;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section h2:before {
+            content: "•";
+            color: #667eea;
+            font-size: 1.8em;
         }
         
         .section p, .section ul {
             margin-bottom: 15px;
+            color: #4a5568;
         }
         
         .section ul {
-            padding-left: 20px;
+            padding-left: 25px;
         }
         
         .section li {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 10px;
         }
         
-        .highlight {
-            background-color: #fff3cd;
-            padding: 15px;
-            border-left: 4px solid #ffc107;
-            margin: 15px 0;
-            border-radius: 4px;
+        .section li:before {
+            content: "→";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #2196f3;
+            margin: 25px 0;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee, #ffcdd2);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #f44336;
+            margin: 25px 0;
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, #e8f5e8, #c8e6c9);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid #4caf50;
+            margin: 25px 0;
         }
         
         .footer {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #666;
-            font-size: 0.9em;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            color: #718096;
+            font-size: 0.95em;
+        }
+        
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .acceptance-section {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px dashed #9c27b0;
+            margin: 40px 0;
         }
         
         @media (max-width: 768px) {
             .container {
-                padding: 20px;
-                margin: 10px;
+                padding: 25px;
+                margin: 20px;
             }
             
             .header h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
+            
+            .section {
+                padding: 20px;
+            }
+        }
+        
+        /* Animações suaves */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .section {
+            animation: fadeIn 0.6s ease-out;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>PRAMAMAES</h1>
+            <h1>👶 PRAMAMAES</h1>
             <div class="subtitle">Termos de Uso e Política de Privacidade</div>
         </div>
 
-        <!-- Aqui você cola o conteúdo completo dos termos que criamos -->
+        <div class="last-update">
+            <strong>📅 Última atualização:</strong> 01 de Janeiro de 2024
+        </div>
+
+        <!-- SEÇÃO 1 -->
         <div class="section">
             <h2>1. INTERMEDIAÇÃO DE SERVIÇOS</h2>
             <p>O Pramamaes atua como plataforma de intermediação entre babás e famílias, facilitando a conexão, comunicação e negociação entre as partes. Não somos empregadores das babás cadastradas.</p>
         </div>
 
+        <!-- SEÇÃO 2 -->
         <div class="section">
             <h2>2. CADASTRO E VERIFICAÇÃO</h2>
             <ul>
@@ -122,16 +220,195 @@
             </ul>
         </div>
 
-        <!-- Continue com todas as outras seções dos termos -->
-        <!-- ... -->
+        <!-- SEÇÃO 3 -->
+        <div class="section">
+            <h2>3. GESTÃO DO PERFIL</h2>
+            <ul>
+                <li>Alterações no perfil devem ser feitas exclusivamente pelo titular da conta</li>
+                <li>É proibida a transferência ou compartilhamento de conta com terceiros</li>
+                <li>O usuário é responsável pela segurança de suas credenciais de acesso</li>
+            </ul>
+        </div>
 
-        <div class="section highlight">
-            <p><strong>Última atualização:</strong> 01 de Janeiro de 2024</p>
+        <!-- SEÇÃO 4 -->
+        <div class="section">
+            <h2>4. IMAGEM E CONTEÚDO</h2>
+            <div class="highlight-box">
+                <strong>📸 Fotos obrigatórias:</strong>
+                <ul>
+                    <li>1 foto para perfil (rosto visível)</li>
+                    <li>1 foto para a seção "Mais Detalhes"</li>
+                </ul>
+            </div>
+            <div class="warning-box">
+                <strong>🚫 Proibido:</strong>
+                <ul>
+                    <li>Fotos de terceiros ou crianças</li>
+                    <li>Conteúdo inadequado ou ofensivo</li>
+                    <li>Imagens que violem direitos autorais</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5 -->
+        <div class="section">
+            <h2>5. TAXA DE CADASTRO</h2>
+            <div class="success-box">
+                <ul>
+                    <li><strong>💳 Valor fixo:</strong> Cobrança única para manutenção do cadastro ativo</li>
+                    <li><strong>📈 Sujeito a alterações:</strong> O valor pode ser reajustado futuramente</li>
+                    <li><strong>🔔 Comunicação:</strong> Mudanças serão avisadas com antecedência</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 6 -->
+        <div class="section">
+            <h2>6. RESPONSABILIDADES E CONDUTA</h2>
+            <div class="highlight-box">
+                <strong>✅ Compromissos da Babá:</strong>
+                <ul>
+                    <li>Pontualidade nos atendimentos</li>
+                    <li>Comunicação proativa com as famílias</li>
+                    <li>Sigilo sobre informações familiares</li>
+                    <li>Cuidado adequado e responsável</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 7 -->
+        <div class="section">
+            <h2>7. SISTEMA DE ADVERTÊNCIAS</h2>
+            <div class="warning-box">
+                <strong>📧 Sistema Automático via E-mail:</strong>
+                <ul>
+                    <li><strong>3 reclamações comprovadas:</strong> Advertência formal por e-mail</li>
+                    <li><strong>Falta grave:</strong> Suspensão por 15 dias (não comparecimento)</li>
+                    <li><strong>Reincidência:</strong> Suspensão por 30 dias</li>
+                    <li><strong>Múltiplas reclamações:</strong> Banimento permanente</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 8 -->
+        <div class="section">
+            <h2>8. SISTEMA DE AVALIAÇÃO</h2>
+            <ul>
+                <li>Famílias avaliam o serviço (1-5 estrelas) com comentários</li>
+                <li>Avaliações falsas podem ser contestadas via suporte</li>
+                <li>Média de avaliações é pública no perfil</li>
+                <li>Comentários são moderados para manter o respeito</li>
+            </ul>
+        </div>
+
+        <!-- SEÇÃO 9 -->
+        <div class="section">
+            <h2>9. ACORDOS FINANCEIROS</h2>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>🤝 Negociação direta:</strong> Valores combinados entre as partes</li>
+                    <li><strong>📝 Recomendado:</strong> Contrato escrito de serviços</li>
+                    <li><strong>⚖️ Responsabilidade:</strong> App não intervém em questões financeiras</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 10 -->
+        <div class="section">
+            <h2>10. CRIANÇAS COM NECESSIDADES ESPECIAIS</h2>
+            <div class="success-box">
+                <strong>🎯 Direito de Revisão de Valor:</strong>
+                <ul>
+                    <li>Crianças com deficiência física ou intelectual</li>
+                    <li>Condições médicas com atenção especializada</li>
+                    <li>Necessidades terapêuticas específicas</li>
+                </ul>
+            </div>
+            <div class="highlight-box">
+                <strong>💡 Boas Práticas:</strong>
+                <ul>
+                    <li>Transparência no ajuste de valor</li>
+                    <li>Comunicação clara com as famílias</li>
+                    <li>Tratamento respeitoso e profissional</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 11 -->
+        <div class="section">
+            <h2>11. CANCELAMENTOS E REMARCAÇÕES</h2>
+            <ul>
+                <li><strong>Babá cancela:</strong> Até 24h antes (exceto emergências)</li>
+                <li><strong>Família cancela:</strong> Sem multa com 24h de antecedência</li>
+                <li><strong>Emergências:</strong> Comunicar imediatamente</li>
+                <li><strong>Profissionalismo:</strong> Manter comunicação sempre</li>
+            </ul>
+        </div>
+
+        <!-- SEÇÃO 12 -->
+        <div class="section">
+            <h2>12. PRIVACIDADE E PROTEÇÃO DE DADOS</h2>
+            <div class="success-box">
+                <ul>
+                    <li>🔒 Dados protegidos pela LGPD</li>
+                    <li>🤝 Não compartilhamos informações com terceiros</li>
+                    <li>🗑️ Solicitação de exclusão a qualquer momento</li>
+                    <li>🎯 Uso apenas para intermediação de serviços</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 13 -->
+        <div class="section">
+            <h2>13. ATUALIZAÇÕES DOS TERMOS</h2>
+            <ul>
+                <li>Termos podem ser atualizados periodicamente</li>
+                <li>Alterações significativas serão comunicadas por e-mail</li>
+                <li>Uso continuado implica aceitação dos novos termos</li>
+            </ul>
+        </div>
+
+        <!-- SEÇÃO 14 - ACEITAÇÃO -->
+        <div class="acceptance-section">
+            <h2>14. ACEITAÇÃO DOS TERMOS</h2>
+            <p>Ao criar sua conta, você declara que:</p>
+            <ul>
+                <li>✅ Leu e compreendeu todos os termos</li>
+                <li>✅ Concorda integralmente com as condições</li>
+                <li>✅ Assume responsabilidade por suas ações</li>
+                <li>✅ Aceita o sistema de advertências via e-mail</li>
+                <li>✅ Concorda com a taxa de cadastro vigente</li>
+            </ul>
         </div>
 
         <div class="footer">
-            <p>Pramamaes &copy; 2024 - Todos os direitos reservados</p>
+            <p>👶 <strong>Pramamaes</strong> - Conectando famílias e babás com confiança</p>
+            <p>© 2024 - Todos os direitos reservados</p>
+            <p>📧 Contato: através do aplicativo</p>
         </div>
     </div>
+
+    <script>
+        // Efeito de scroll suave
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
 </body>
 </html>
